@@ -245,7 +245,7 @@ class Plugin_Command extends \WP_CLI\CommandWithUpgrade {
 		$api = plugins_api( 'plugin_information', array( 'slug' => $slug ) );
 
 		if ( is_wp_error( $api ) ) {
-			WP_CLI::warning( 'plugin_information failed.' );
+			var_dump($api->get_error_data());
 			return $api;
 		}
 
